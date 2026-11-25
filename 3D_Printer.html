@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D Printer — David Kesselman Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="CSS/style.css" rel="stylesheet">
+<style>
+	/* Print images (page-only styles) */
+	.gallery .print-link {
+		display: block;
+	}
+	.gallery .print-img {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		object-position: center;
+	}
+	.gallery .print-img.watch {
+		object-position: center 60%;
+	}
+	.gallery .print-link:hover .print-img,
+	.gallery .print-link:focus-visible .print-img {
+		opacity: 0.85;
+	}
+</style>
+</head>
+
+<body>
+<header>
+	<a href="Index.html">Portfolio</a>
+</header>
+<nav aria-label="Main">
+	<!--Home-->
+	<a class="navButton" href="Index.html">Home</a>
+	<!--About-->
+	<a class="navButton" href="About.html">About</a>
+	<!--Work-->
+	<div class="btnholder">
+		<a class="navButton active" href="Work.html">Work</a>
+		<div class="dropdown">
+			<a href="Technical_Designer.html">Technical Designer</a>
+			<a class="active" href="3D_Printer.html" aria-current="page">3D Printer</a>
+			<a href="Drone_Filmer.html">Drone Filmer</a>
+			<a href="Web_Designer.html">Web Designer</a>
+		</div>
+	</div>
+	<!--Contact-->
+	<a class="navButton" href="Contact.html">Contact</a>
+</nav>
+
+<main>
+	<a class="back-link" href="Work.html">&larr; Back to all work</a>
+
+	<section class="panel split">
+		<div class="split-text">
+			<p class="eyebrow">Work · Making</p>
+			<h1 class="page-title">3D Printer</h1>
+			<p class="lead">I model and print prototypes, replacement parts and display pieces — the same design-to-build thinking I use at work, on my own desk.</p>
+		</div>
+		<dl class="facts">
+			<div><dt>Printer</dt><dd>Bambu Lab H2S</dd></div>
+			<div><dt>Software</dt><dd>FreeCad, TinkerCAD, Bambu Studio</dd></div>
+			<div><dt>Materials</dt><dd>PLA</dd>
+			</div>
+		</dl>
+	</section>
+
+	<section class="stack">
+		<h2 class="section-title">Prints</h2>
+		<div class="gallery">
+			<figure>
+				<a class="print-link" href="Images/Foam-Gun.png" title="Open full-size image"><img class="print-img" src="Images/Foam-Gun.png" alt="CAD model of a 3D-printed foam gun with trigger, nozzle and screws" width="992" height="1023"></a>
+				<figcaption><strong>Foam Gun</strong><span>PLA · Prototype Design</span></figcaption>
+			</figure>
+			<figure>
+				<a class="print-link" href="Images/Pixel_Watch_Stand.png" title="Open full-size image"><img class="print-img watch" src="Images/Pixel_Watch_Stand.png" alt="3D model of a Pixel Watch charging stand" width="592" height="747"></a>
+				<figcaption><strong>Pixel Watch Stand</strong><span>PLA · Charging stand for my Pixel Watch</span></figcaption>
+			</figure>
+			<figure>
+				<a class="print-link" href="Images/Phone_Stand.png" title="Open full-size image"><img class="print-img" src="Images/Phone_Stand.png" alt="3D model of a phone stand with the name David on the front" width="1101" height="1059"></a>
+				<figcaption><strong>Phone Stand</strong><span>PLA · Desk phone stand with my name</span></figcaption>
+			</figure>
+		</div>
+	</section>
+</main>
+
+<footer>
+	<div class="footer-inner">
+		<span>&copy; 2026 David Kesselman</span>
+		<span>Technical design · 3D printing · Drone filming · Web design</span>
+	</div>
+</footer>
+</body>
+</html>

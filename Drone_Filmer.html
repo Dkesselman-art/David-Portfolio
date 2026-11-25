@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drone Filmer — David Kesselman Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="CSS/style.css" rel="stylesheet">
+<style>
+	/* Drone page media (page-only styles) */
+	.video-box .drone-video {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1920 / 1012;
+		background: Black;
+	}
+	.gallery .still-link {
+		display: block;
+	}
+	.gallery .still-img {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 10;
+		object-fit: cover;
+		object-position: center;
+	}
+	.gallery .still-link:hover .still-img,
+	.gallery .still-link:focus-visible .still-img {
+		opacity: 0.85;
+	}
+</style>
+</head>
+
+<body>
+<header>
+	<a href="Index.html">Portfolio</a>
+</header>
+<nav aria-label="Main">
+	<!--Home-->
+	<a class="navButton" href="Index.html">Home</a>
+	<!--About-->
+	<a class="navButton" href="About.html">About</a>
+	<!--Work-->
+	<div class="btnholder">
+		<a class="navButton active" href="Work.html">Work</a>
+		<div class="dropdown">
+			<a href="Technical_Designer.html">Technical Designer</a>
+			<a href="3D_Printer.html">3D Printer</a>
+			<a class="active" href="Drone_Filmer.html" aria-current="page">Drone Filmer</a>
+			<a href="Web_Designer.html">Web Designer</a>
+		</div>
+	</div>
+	<!--Contact-->
+	<a class="navButton" href="Contact.html">Contact</a>
+</nav>
+
+<main>
+	<a class="back-link" href="Work.html">&larr; Back to all work</a>
+
+	<section class="panel video-box">
+		<!--Featured drone video-->
+		<video class="drone-video" controls muted playsinline preload="metadata" poster="Images/DJI_Video_Poster.jpg" width="1920" height="1012">
+			<source src="Images/DJI_Video.mp4" type="video/mp4">
+		</video>
+		<div class="video-info split">
+			<div class="split-text">
+				<p class="eyebrow">Work · Aerial</p>
+				<h1 class="page-title">Drone Filmer</h1>
+				<p class="lead">Aerial video and photography — planning the shot, flying it and editing the final cut.</p>
+			</div>
+			<dl class="facts">
+				<div><dt>Drone</dt><dd>DJI Inspire 1</dd></div>
+			</dl>
+		</div>
+	</section>
+
+	<section class="stack">
+		<h2 class="section-title">Stills</h2>
+		<div class="gallery">
+			<figure>
+				<a class="still-link" href="Images/Hotchkiss_Mountain.JPG" title="Open full-size photo"><img class="still-img" src="Images/Hotchkiss_Mountain.JPG" alt="Aerial view over farmland toward the mountains near Hotchkiss" width="2576" height="1449"></a>
+				<figcaption><strong>Hotchkiss Mountain</strong></figcaption>
+			</figure>
+			<figure>
+				<a class="still-link" href="Images/Long_Point_Park.JPG" title="Open full-size photo"><img class="still-img" src="Images/Long_Point_Park.JPG" alt="Aerial view of Long Point Park and the surrounding river" width="2576" height="1449"></a>
+				<figcaption><strong>Long Point Park</strong></figcaption>
+			</figure>
+			<figure>
+				<a class="still-link" href="Images/Orange_Lake_Olando.JPG" title="Open full-size photo"><img class="still-img" src="Images/Orange_Lake_Olando.JPG" alt="Aerial view of the Orange Lake resort pools at dusk" width="2576" height="1932"></a>
+				<figcaption><strong>Orange Lake, Orlando</strong></figcaption>
+			</figure>
+		</div>
+	</section>
+</main>
+
+<footer>
+	<div class="footer-inner">
+		<span>&copy; 2026 David Kesselman</span>
+		<span>Technical design · 3D printing · Drone filming · Web design</span>
+	</div>
+</footer>
+</body>
+</html>

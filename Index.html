@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home — David Kesselman Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="CSS/style.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+	<a href="Index.html">Portfolio</a>
+</header>
+<nav aria-label="Main">
+	<!--Home-->
+	<a class="navButton active" href="Index.html" aria-current="page">Home</a>
+	<!--About-->
+	<a class="navButton" href="About.html">About</a>
+	<!--Work-->
+	<div class="btnholder">
+		<a class="navButton" href="Work.html">Work</a>
+		<div class="dropdown">
+			<a href="Technical_Designer.html">Technical Designer</a>
+			<a href="3D_Printer.html">3D Printer</a>
+			<a href="Drone_Filmer.html">Drone Filmer</a>
+			<a href="Web_Designer.html">Web Designer</a>
+		</div>
+	</div>
+	<!--Contact-->
+	<a class="navButton" href="Contact.html">Contact</a>
+</nav>
+
+<main>
+	<!--Intro-->
+	<section class="panel hero">
+		<div class="hero-text">
+			<p class="eyebrow">Hi, I'm David Kesselman</p>
+			<h1>I design things that get built — from closets to websites.</h1>
+			<p class="lead">Technical Designer at Closets By Design, working in Cabinet Vision. I'm studying toward UX/UI and product design.</p>
+			<div class="btn-row">
+				<a class="navButton active" href="Work.html">View my work</a>
+				<a class="navButton" href="Contact.html">Contact me</a>
+			</div>
+		</div>
+		<div class="hero-photo">
+			<img class="photo-circle" src="Images/me.png" alt="David Kesselman" width="240" height="240">
+		</div>
+	</section>
+
+	<!--What I do-->
+	<section class="stack">
+		<h2 class="section-title">What I do</h2>
+		<div class="cards">
+		<a class="card" href="Technical_Designer.html">
+			<svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"></rect><path d="M12 3v18M3 12h9M15 8h3M15 16h3"></path></svg>
+			<h3>Technical Designer</h3>
+<p>Closet, garage and office designs built in Cabinet Vision.</p>
+			<span class="more">See projects &rarr;</span>
+		</a>
+		<a class="card" href="3D_Printer.html">
+		<svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v6H4zM8 10v3h8v-3M10 13v3h4v-3M6 20h12M9 16l-1 4M15 16l1 4"></path></svg>
+			<h3>3D Printer</h3>
+			<p>Parts, prototypes and models printed on a Bambu Lab H2S.</p>
+			<span class="more">See projects &rarr;</span>
+		</a>
+		<a class="card" href="Drone_Filmer.html">
+			<svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="5" r="2.5"></circle><circle cx="19" cy="5" r="2.5"></circle><circle cx="5" cy="19" r="2.5"></circle><circle cx="19" cy="19" r="2.5"></circle><path d="M7 7l3 3M17 7l-3 3M7 17l3-3M17 17l-3-3"></path><rect x="9.5" y="9.5" width="5" height="5" rx="1"></rect></svg>
+			<h3>Drone Filmer</h3>
+			<p>Aerial video and stills from above.</p>
+			<span class="more">See projects &rarr;</span>
+		</a>
+		<a class="card" href="Web_Designer.html">
+			<svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 8h18M9 13l-2 2 2 2M15 13l2 2-2 2"></path></svg>
+			<h3>Web Designer</h3>
+			<p>HTML, CSS and JavaScript.</p>
+			<span class="more">See projects &rarr;</span>
+		</a>
+		</div>
+	</section>
+</main>
+
+<footer>
+	<div class="footer-inner">
+		<span>&copy; 2026 David Kesselman</span>
+		<span>Technical design · 3D printing · Drone filming · Web design</span>
+	</div>
+</footer>
+</body>
+</html>

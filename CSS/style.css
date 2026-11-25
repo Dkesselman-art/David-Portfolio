@@ -1,0 +1,797 @@
+/* ---------- Page basics ---------- */
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	color: white;
+	font-family: 'Inter', Arial, sans-serif;
+	background-color: midnightblue;
+	background-image: radial-gradient(1100px 520px at 50% -160px, darkslateblue 0%, transparent 70%);
+	background-repeat: no-repeat;
+}
+h1, h2, h3 {
+	font-family: 'Libre Baskerville', Georgia, serif;
+	font-weight: 700;
+	margin: 0;
+	color: inherit;
+}
+p {
+	margin: 0;
+}
+
+/* Anything with a white background gets dark text */
+.panel,
+.card,
+.work-card,
+.gallery figure,
+.step,
+.feature {
+	color: midnightblue;
+}
+.panel a {
+	color: royalblue;
+}
+a {
+	color: deepskyblue;
+}
+
+/* ---------- Header ---------- */
+header {
+	text-align: center;
+	padding: 28px 24px 0;
+}
+header a {
+	font-family: 'Libre Baskerville', Georgia, serif;
+	font-size: 52px;
+	line-height: 1.4;
+	color: white;
+	text-decoration: none;
+}
+header a::after {
+	content: ".";
+	color: deepskyblue;
+}
+
+/* ---------- Buttons / navigation pills ---------- */
+nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 14px;
+	padding: 16px 24px 48px;
+}
+.navButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 48px;
+	box-sizing: border-box;
+	font-family: 'Libre Baskerville', Georgia, serif;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: white;
+	background-color: transparent;
+	border: 2px solid slategray;
+	border-radius: 999px;
+	padding: 10px 26px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+/* Pills sitting on a white panel get navy outlines */
+.panel .navButton,
+.feature .navButton {
+	color: midnightblue;
+	border-color: lightsteelblue;
+}
+.navButton:hover,
+.navButton:focus-visible,
+.btnholder:hover > .navButton,
+.btnholder:focus-within > .navButton {
+	border-color: deepskyblue;
+	color: deepskyblue;
+}
+.panel .navButton:hover,
+.panel .navButton:focus-visible,
+.feature .navButton:hover,
+.feature .navButton:focus-visible {
+	border-color: royalblue;
+	color: royalblue;
+	background-color: aliceblue;
+}
+/* Current page / main call-to-action */
+.navButton.active,
+.panel .navButton.active,
+.feature .navButton.active {
+	background-color: deepskyblue;
+	border-color: deepskyblue;
+	color: black;
+}
+.navButton.active:hover,
+.navButton.active:focus-visible,
+.btnholder:hover > .navButton.active {
+	background-color: white;
+	border-color: white;
+	color: black;
+}
+.panel .navButton.active:hover,
+.feature .navButton.active:hover {
+	background-color: royalblue;
+	border-color: royalblue;
+	color: white;
+}
+:focus-visible {
+	outline: 3px solid deepskyblue;
+	outline-offset: 3px;
+}
+
+/* Work dropdown */
+.btnholder {
+	position: relative;
+	display: inline-block;
+}
+.dropdown {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	min-width: 230px;
+	margin-top: 8px;
+	padding: 8px;
+	box-sizing: border-box;
+	z-index: 10;
+	flex-direction: column;
+	gap: 4px;
+	background-color: navy;
+	border: 1px solid darkslateblue;
+	border-radius: 22px;
+	box-shadow: 0 12px 32px black;
+}
+/* invisible bridge so the menu doesn't close in the gap */
+.dropdown::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -10px;
+	height: 10px;
+}
+.btnholder:hover .dropdown,
+.btnholder:focus-within .dropdown {
+	display: flex;
+}
+.dropdown a {
+	display: block;
+	text-align: center;
+	font-family: 'Libre Baskerville', Georgia, serif;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	color: white;
+	border-radius: 999px;
+	padding: 12px 14px;
+	text-decoration: none;
+}
+.dropdown a:hover,
+.dropdown a:focus-visible {
+	background-color: midnightblue;
+	color: deepskyblue;
+}
+.dropdown a.active {
+	background-color: deepskyblue;
+	color: black;
+}
+
+/* ---------- Main content area ---------- */
+main {
+	width: 100%;
+	max-width: 1120px;
+	margin: 0 auto 80px;
+	padding: 0 24px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+/* White rounded box used on every page */
+.panel {
+	background-color: white;
+	border-radius: 28px;
+	border-top: 6px solid deepskyblue;
+	box-shadow: 0 12px 32px black;
+	padding: 40px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+.eyebrow,
+.feature .eyebrow {
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: royalblue;
+}
+.lead {
+	max-width: 760px;
+	font-size: 18px;
+	line-height: 1.7;
+	color: dimgray;
+}
+.page-intro .lead {
+	color: lightsteelblue;
+}
+.page-title {
+	font-size: 40px;
+}
+.section-title {
+	font-size: 30px;
+}
+.section-title::after {
+	content: "";
+	display: block;
+	width: 56px;
+	height: 4px;
+	margin-top: 12px;
+	border-radius: 4px;
+	background-color: deepskyblue;
+}
+.page-intro {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	align-items: center;
+}
+.back-link {
+	align-self: flex-start;
+	font-size: 15px;
+	font-weight: 600;
+	color: deepskyblue;
+	text-decoration: none;
+}
+.back-link:hover {
+	text-decoration: underline;
+}
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+}
+.btn-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-top: 8px;
+}
+.stack {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* Box that stands in for a photo until you add one */
+.placeholder {
+	background-color: ghostwhite;
+	background-image: linear-gradient(135deg, ghostwhite 0%, aliceblue 100%);
+	color: dimgray;
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 12px;
+	box-sizing: border-box;
+}
+.photo-circle {
+	width: 240px;
+	height: 240px;
+	border-radius: 50%;
+	border: 3px dashed lightsteelblue;
+	box-shadow: 0 0 0 8px aliceblue;
+}
+
+/* Real photo inside the circle */
+img.photo-circle {
+	display: block;
+	object-fit: cover;
+	border: 4px solid white;
+	box-shadow: 0 0 0 6px deepskyblue;
+}
+
+/* ---------- Shared hover for clickable cards ---------- */
+.card,
+.work-card {
+	transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.card:hover,
+.card:focus-visible,
+.work-card:hover,
+.work-card:focus-visible {
+	transform: translateY(-4px);
+	box-shadow: 0 18px 40px black;
+	border-color: deepskyblue;
+}
+.card .more,
+.work-card .more {
+	color: royalblue;
+}
+
+/* ---------- Home ---------- */
+.hero {
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 40px;
+	padding: 56px 48px;
+}
+.hero-text {
+	flex: 999 1 420px;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+.hero-text h1 {
+	font-size: 44px;
+	line-height: 1.25;
+}
+.hero-photo {
+	flex: 1 1 240px;
+	display: flex;
+	justify-content: center;
+}
+
+/* Link cards (Home "What I do") */
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.card {
+	flex: 1 1 230px;
+	min-width: 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	background-color: white;
+	border: 2px solid transparent;
+	border-radius: 24px;
+	padding: 28px;
+	text-decoration: none;
+	box-shadow: 0 12px 32px black;
+}
+.card svg {
+	color: royalblue;
+	background-color: aliceblue;
+	border-radius: 14px;
+	padding: 10px;
+	margin-bottom: 6px;
+}
+.card h3 {
+	font-size: 21px;
+}
+.card p {
+	font-size: 16px;
+	line-height: 1.6;
+	color: dimgray;
+}
+.card .more {
+	margin-top: auto;
+	font-weight: 600;
+	font-size: 15px;
+}
+
+/* ---------- Gallery (project pages) ---------- */
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.gallery figure {
+	margin: 0;
+	flex: 1 1 300px;
+	min-width: 0;
+	background-color: white;
+	border-radius: 24px;
+	overflow: hidden;
+	box-shadow: 0 12px 32px black;
+}
+.gallery .placeholder {
+	aspect-ratio: 4 / 3;
+	border-bottom: 1px solid gainsboro;
+}
+.gallery figcaption {
+	padding: 16px 20px;
+	font-size: 16px;
+}
+.gallery figcaption strong {
+	font-family: 'Libre Baskerville', Georgia, serif;
+}
+.gallery figcaption span {
+	display: block;
+	color: dimgray;
+	font-size: 15px;
+	margin-top: 4px;
+}
+
+/* Big cards on the Work page */
+.work-card {
+	flex: 1 1 440px;
+	min-width: 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	border: 2px solid transparent;
+	border-radius: 28px;
+	overflow: hidden;
+	text-decoration: none;
+	box-shadow: 0 12px 32px black;
+}
+.work-card .placeholder {
+	aspect-ratio: 16 / 9;
+	border-bottom: 1px solid gainsboro;
+}
+.work-card .info {
+	padding: 24px 28px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.work-card h2 {
+	font-size: 24px;
+}
+.work-card p {
+	font-size: 16px;
+	line-height: 1.6;
+	color: dimgray;
+}
+.work-card .more {
+	font-weight: 600;
+	font-size: 15px;
+}
+
+/* ---------- Project page pieces ---------- */
+.steps {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.step {
+	flex: 1 1 240px;
+	min-width: 0;
+	box-sizing: border-box;
+	background-color: white;
+	border-radius: 24px;
+	padding: 24px 28px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	box-shadow: 0 12px 32px black;
+}
+.step .num {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: deepskyblue;
+	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+}
+.step h2 {
+	font-size: 20px;
+}
+.step p {
+	font-size: 16px;
+	line-height: 1.6;
+	color: dimgray;
+}
+
+/* Fact box (printer, drone, software…) */
+.facts {
+	flex: 1 1 260px;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	background-color: ghostwhite;
+	border: 1px solid gainsboro;
+	border-radius: 20px;
+	padding: 20px 24px;
+}
+.facts dt {
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: royalblue;
+}
+.facts dd {
+	margin: 2px 0 0;
+	font-size: 17px;
+}
+.split {
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 32px;
+}
+.split-text {
+	flex: 999 1 460px;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+/* Video area (Drone page) */
+.video-box {
+	padding: 0;
+	overflow: hidden;
+	gap: 0;
+}
+.video {
+	aspect-ratio: 16 / 9;
+	background-color: black;
+	background-image: radial-gradient(circle at 50% 45%, navy 0%, black 70%);
+	color: lightsteelblue;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 14px;
+	font-size: 16px;
+}
+.play {
+	width: 84px;
+	height: 84px;
+	border-radius: 50%;
+	background-color: deepskyblue;
+	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.video-info {
+	padding: 32px 40px;
+}
+
+/* Feature project (Web Designer page) */
+.feature {
+	background-color: white;
+	border-radius: 28px;
+	overflow: hidden;
+	display: flex;
+	flex-wrap: wrap;
+	box-shadow: 0 12px 32px black;
+}
+.feature .shot {
+	flex: 1 1 420px;
+	min-height: 300px;
+	background-color: black;
+	background-image: none;
+	color: lightsteelblue;
+}
+.feature .text {
+	flex: 1 1 420px;
+	min-width: 0;
+	box-sizing: border-box;
+	padding: 36px 40px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+.feature h2 {
+	font-size: 28px;
+}
+.feature p {
+	font-size: 17px;
+	line-height: 1.7;
+	color: dimgray;
+}
+/* Mini preview of this site's nav (Web Designer page) */
+.feature .mini-nav {
+	background-color: midnightblue;
+	background-image: radial-gradient(500px 240px at 50% 0%, darkslateblue 0%, transparent 70%);
+}
+.mini-nav .chips {
+	justify-content: center;
+}
+.mini-nav .chip {
+	color: white;
+	background-color: transparent;
+	border-color: slategray;
+}
+.mini-nav .chip.on {
+	color: black;
+	background-color: deepskyblue;
+	border-color: deepskyblue;
+}
+
+/* Tags / chips */
+.chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.chip {
+	border: 1px solid lightsteelblue;
+	background-color: ghostwhite;
+	color: midnightblue;
+	border-radius: 999px;
+	padding: 6px 14px;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+/* ---------- About ---------- */
+.profile-card {
+	flex: 1 1 300px;
+	align-items: center;
+	text-align: center;
+	padding: 32px;
+}
+.profile-card p {
+	color: dimgray;
+}
+.profile-card .photo-circle {
+	width: 200px;
+	height: 200px;
+}
+.bio {
+	flex: 999 1 480px;
+	min-width: 0;
+}
+.bio h1 {
+	font-size: 38px;
+}
+.half {
+	flex: 1 1 420px;
+	min-width: 0;
+	padding: 32px;
+}
+.half h2 {
+	font-size: 26px;
+}
+.half h3 {
+	margin-top: 12px;
+	font-size: 20px;
+}
+.half p {
+	font-size: 16px;
+	line-height: 1.7;
+	color: dimgray;
+}
+.edu {
+	border: 1px solid gainsboro;
+	border-left: 4px solid deepskyblue;
+	background-color: ghostwhite;
+	border-radius: 16px;
+	padding: 16px 20px;
+}
+.edu strong {
+	font-size: 17px;
+}
+.edu span {
+	display: block;
+	margin-top: 4px;
+	font-size: 15px;
+	color: dimgray;
+}
+
+/* ---------- Contact ---------- */
+.contact-form {
+	flex: 999 1 520px;
+	min-width: 0;
+}
+.contact-form h1 {
+	font-size: 38px;
+}
+.contact-side {
+	flex: 1 1 300px;
+	min-width: 0;
+	padding: 32px;
+	gap: 18px;
+}
+.contact-side h2 {
+	font-size: 24px;
+}
+.contact-side p,
+.contact-side a {
+	font-size: 17px;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+label {
+	font-weight: 600;
+	font-size: 15px;
+}
+.field {
+	width: 100%;
+	box-sizing: border-box;
+	font-family: 'Inter', Arial, sans-serif;
+	font-size: 16px;
+	color: midnightblue;
+	background-color: ghostwhite;
+	border: 1px solid lightsteelblue;
+	border-radius: 16px;
+	padding: 12px 16px;
+	min-height: 48px;
+}
+.field::placeholder {
+	color: slategray;
+}
+.field:focus {
+	outline: 3px solid deepskyblue;
+	outline-offset: 1px;
+	border-color: royalblue;
+	background-color: white;
+}
+textarea.field {
+	resize: vertical;
+}
+.error {
+	display: none;
+	font-size: 14px;
+	font-weight: 600;
+	color: firebrick;
+}
+.success {
+	display: none;
+	background-color: midnightblue;
+	border-left: 6px solid deepskyblue;
+	color: white;
+	border-radius: 18px;
+	padding: 20px;
+	line-height: 1.6;
+}
+.success strong {
+	font-family: 'Libre Baskerville', Georgia, serif;
+	font-size: 20px;
+	color: deepskyblue;
+}
+
+/* ---------- Footer ---------- */
+footer {
+	background-color: black;
+	border-top: 1px solid midnightblue;
+	color: lightsteelblue;
+	margin-top: auto;
+}
+.footer-inner {
+	max-width: 1120px;
+	margin: 0 auto;
+	padding: 28px 24px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px 24px;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 15px;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 600px) {
+	header a { font-size: 40px; }
+	.panel, .hero { padding: 28px 22px; }
+	.hero-text h1 { font-size: 32px; }
+	.page-title { font-size: 32px; }
+}

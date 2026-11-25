@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — David Kesselman Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="CSS/style.css" rel="stylesheet">
+<style>
+	/* Work page card photos */
+	.work-card .card-img {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 2 / 1;
+		object-fit: cover;
+	}
+</style>
+</head>
+
+<body>
+<header>
+	<a href="Index.html">Portfolio</a>
+</header>
+<nav aria-label="Main">
+	<!--Home-->
+	<a class="navButton" href="Index.html">Home</a>
+	<!--About-->
+	<a class="navButton" href="About.html">About</a>
+	<!--Work-->
+	<div class="btnholder">
+		<a class="navButton active" href="Work.html" aria-current="page">Work</a>
+		<div class="dropdown">
+			<a href="Technical_Designer.html">Technical Designer</a>
+			<a href="3D_Printer.html">3D Printer</a>
+			<a href="Drone_Filmer.html">Drone Filmer</a>
+			<a href="Web_Designer.html">Web Designer</a>
+		</div>
+	</div>
+	<!--Contact-->
+	<a class="navButton" href="Contact.html">Contact</a>
+</nav>
+
+<main>
+	<div class="page-intro">
+		<h1 class="page-title">My work</h1>
+		<p class="lead">Four sides of how I design and make things. Pick one to see the projects.</p>
+	</div>
+
+	<!--Portfolio gallery-->
+	<section class="row">
+		<a class="work-card" href="Technical_Designer.html">
+			<img class="card-img" src="Images/Cabinet_Vision_V24.webp" alt="Cabinet Vision closet design shown on a laptop screen" width="1200" height="600">
+			<div class="info">
+				<h2>Technical Designer</h2>
+				<p>Custom closets, garages and offices designed in Cabinet Vision.</p>
+				<span class="more">See projects &rarr;</span>
+			</div>
+		</a>
+		<a class="work-card" href="3D_Printer.html">
+			<img class="card-img" src="Images/Bambu_Lab_H2S.png" alt="Bambu Lab H2S 3D printer with AMS 2 filament unit on top" width="1200" height="600">
+			<div class="info">
+				<h2>3D Printer</h2>
+				<p>Models, prototypes and useful parts from my Bambu Lab H2S.</p>
+				<span class="more">See projects &rarr;</span>
+			</div>
+		</a>
+		<a class="work-card" href="Drone_Filmer.html">
+			<img class="card-img" src="Images/DJI_Inspire_1.png" alt="DJI Inspire 1 drone with gimbal camera" width="1200" height="600">
+			<div class="info">
+				<h2>Drone Filmer</h2>
+				<p>Aerial video and photography.</p>
+				<span class="more">See projects &rarr;</span>
+			</div>
+		</a>
+		<a class="work-card" href="Web_Designer.html">
+			<img class="card-img" src="Images/Solar_System_Website.png" alt="Home page of my Solar System website" width="1200" height="600">
+			<div class="info">
+				<h2>Web Designer</h2>
+				<p>Websites including my Solar System site.</p>
+				<span class="more">See projects &rarr;</span>
+			</div>
+		</a>
+	</section>
+</main>
+
+<footer>
+	<div class="footer-inner">
+		<span>&copy; 2026 David Kesselman</span>
+		<span>Technical design · 3D printing · Drone filming · Web design</span>
+	</div>
+</footer>
+</body>
+</html>

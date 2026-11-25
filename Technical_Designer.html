@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Designer — David Kesselman Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="CSS/style.css" rel="stylesheet">
+<style>
+	/* Project plan images (page-only styles) */
+	.gallery .plan-link {
+		display: block;
+		background: white;
+	}
+	.gallery .plan-img {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 10;
+		object-fit: contain;
+		background: white;
+	}
+	.gallery .plan-link:hover .plan-img,
+	.gallery .plan-link:focus-visible .plan-img {
+		opacity: 0.85;
+	}
+</style>
+</head>
+
+<body>
+<header>
+	<a href="Index.html">Portfolio</a>
+</header>
+<nav aria-label="Main">
+	<!--Home-->
+	<a class="navButton" href="Index.html">Home</a>
+	<!--About-->
+	<a class="navButton" href="About.html">About</a>
+	<!--Work-->
+	<div class="btnholder">
+		<a class="navButton active" href="Work.html">Work</a>
+		<div class="dropdown">
+			<a class="active" href="Technical_Designer.html" aria-current="page">Technical Designer</a>
+			<a href="3D_Printer.html">3D Printer</a>
+			<a href="Drone_Filmer.html">Drone Filmer</a>
+			<a href="Web_Designer.html">Web Designer</a>
+		</div>
+	</div>
+	<!--Contact-->
+	<a class="navButton" href="Contact.html">Contact</a>
+</nav>
+
+<main>
+	<a class="back-link" href="Work.html">&larr; Back to all work</a>
+
+	<section class="panel">
+		<p class="eyebrow">Work · Closets By Design</p>
+		<h1 class="page-title">Technical Designer</h1>
+		<p class="lead">As a CAD programmer in Cabinet Vision, I turn room measurements and client ideas into accurate, buildable designs for custom closets, garages and home offices.</p>
+	</section>
+
+	<section class="steps">
+		<div class="step"><span class="num">1</span><h2>Plan</h2><p>Start from the room's measurements and what the client needs to store.</p></div>
+		<div class="step"><span class="num">2</span><h2>Design</h2><p>Model the layout in Cabinet Vision with exact dimensions and materials.</p></div>
+		<div class="step"><span class="num">3</span><h2>Program</h2><p>Prepare the design so it's ready for production.</p></div>
+	</section>
+
+	<section class="stack">
+		<h2 class="section-title">Projects</h2>
+		<div class="gallery">
+			<figure>
+				<a class="plan-link" href="Images/Cabinet_Vision_Closet.png" title="Open full-size plan"><img class="plan-img" src="Images/Cabinet_Vision_Closet.png" alt="Plan view of a walk-in closet with double hang, drawer hutch and center island" width="1600" height="1000"></a>
+				<figcaption><strong>Walk-In Closet — Option A</strong><span>Walk-in closet · Cabinet Vision</span></figcaption>
+			</figure>
+			<figure>
+				<a class="plan-link" href="Images/Cabinet_Vision_Garage.png" title="Open full-size plan"><img class="plan-img" src="Images/Cabinet_Vision_Garage.png" alt="Plan view of a 2-car garage with a back-wall cabinet run, workbench and slatwall" width="1600" height="1000"></a>
+				<figcaption><strong>2-Car Garage — Option B</strong><span>Garage storage · Cabinet Vision</span></figcaption>
+			</figure>
+			<figure>
+				<a class="plan-link" href="Images/Cabinet_Vision_Office.png" title="Open full-size plan"><img class="plan-img" src="Images/Cabinet_Vision_Office.png" alt="Plan view of a home office with a wall desk, file drawers and book wall" width="1600" height="1000"></a>
+				<figcaption><strong>Home Office — Option C</strong><span>Home office · Cabinet Vision</span></figcaption>
+			</figure>
+		</div>
+	</section>
+</main>
+
+<footer>
+	<div class="footer-inner">
+		<span>&copy; 2026 David Kesselman</span>
+		<span>Technical design · 3D printing · Drone filming · Web design</span>
+	</div>
+</footer>
+</body>
+</html>

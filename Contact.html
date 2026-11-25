@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — David Kesselman Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="CSS/style.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+	<a href="Index.html">Portfolio</a>
+</header>
+<nav aria-label="Main">
+	<!--Home-->
+	<a class="navButton" href="Index.html">Home</a>
+	<!--About-->
+	<a class="navButton" href="About.html">About</a>
+	<!--Work-->
+	<div class="btnholder">
+		<a class="navButton" href="Work.html">Work</a>
+		<div class="dropdown">
+			<a href="Technical_Designer.html">Technical Designer</a>
+			<a href="3D_Printer.html">3D Printer</a>
+			<a href="Drone_Filmer.html">Drone Filmer</a>
+			<a href="Web_Designer.html">Web Designer</a>
+		</div>
+	</div>
+	<!--Contact-->
+	<a class="navButton active" href="Contact.html" aria-current="page">Contact</a>
+</nav>
+
+<main>
+	<section class="row" style="align-items: flex-start;">
+		<div class="panel contact-form">
+			<h1>Let's talk</h1>
+			<p class="lead">Have a project, a question or a job opening? Send me a message.</p>
+
+			<form id="contactForm" action="Thank_You.html" method="get" novalidate>
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input class="field" type="text" id="name" name="name" autocomplete="name" placeholder="Name">
+					<p class="error" id="nameError">Enter your name.</p>
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input class="field" type="email" id="email" name="email" autocomplete="email" placeholder="Name@example.com">
+					<p class="error" id="emailError">Enter a valid email address.</p>
+				</div>
+				<div class="form-group">
+					<label for="topic">What's it about?</label>
+					<select class="field" id="topic" name="topic">
+						<option>Technical design</option>
+						<option>3D printing</option>
+						<option>Drone filming</option>
+						<option>Web design</option>
+						<option>Something else</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="message">Message</label>
+					<textarea class="field" id="message" name="message" rows="5" placeholder="Tell me a little about your project."></textarea>
+					<p class="error" id="messageError">Write a short message first.</p>
+				</div>
+				<button class="navButton active" type="submit" style="align-self: flex-start;">Send message</button>
+			</form>
+		</div>
+
+		<aside class="panel contact-side">
+			<h2>Other ways to reach me</h2>
+			<div><p class="eyebrow">Email</p><p>davidkesselman128.com</p></div>
+			<div><p class="eyebrow">LinkedIn</p><p><a href="https://www.linkedin.com/in/david-k-a72575307/" target="_blank">David Kesselman/Linkedin</a></p>
+			</div>
+			<div><p class="eyebrow">GitHub</p><a href="https://github.com/Dkesselman-art" target="_blank">github.com/Dkesselman-art</a></div>
+		</aside>
+	</section>
+</main>
+
+<footer>
+	<div class="footer-inner">
+		<span>&copy; 2026 David Kesselman</span>
+		<span>Technical design · 3D printing · Drone filming · Web design</span>
+	</div>
+</footer>
+<script>
+	// Check the form, then go to the thank-you page (Thank_You.html)
+	var form = document.getElementById("contactForm");
+
+	function showError(fieldId, errorId, isBad) {
+		var field = document.getElementById(fieldId);
+		var error = document.getElementById(errorId);
+		error.style.display = isBad ? "block" : "none";
+		field.setAttribute("aria-invalid", isBad ? "true" : "false");
+		field.style.borderColor = isBad ? "#e5484d" : "";
+	}
+
+	form.addEventListener("submit", function (event) {
+		event.preventDefault();
+
+		var name = document.getElementById("name").value.trim();
+		var email = document.getElementById("email").value.trim();
+		var topic = document.getElementById("topic").value;
+		var message = document.getElementById("message").value.trim();
+
+		var nameBad = name === "";
+
+		var emailBad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+		var messageBad = message === "";
+
+		showError("name", "nameError", nameBad);
+		showError("email", "emailError", emailBad);
+		showError("message", "messageError", messageBad);
+
+		if (nameBad) { document.getElementById("name").focus(); return; }
+		if (emailBad) { document.getElementById("email").focus(); return; }
+		if (messageBad) { document.getElementById("message").focus(); return; }
+
+		window.location.href = "Thank_You.html?name=" + encodeURIComponent(name) +
+			"&topic=" + encodeURIComponent(topic);
+	});
+
+	// Hide the error messages until the visitor tries to send
+	["nameError", "emailError", "messageError"].forEach(function (id) {
+		document.getElementById(id).style.display = "none";
+	});
+</script>
+</body>
+</html>

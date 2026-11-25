@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank You — David Kesselman Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="CSS/style.css" rel="stylesheet">
+<style>
+	/* Thank-you page (page-only styles) */
+	.thanks {
+		max-width: 640px;
+		margin: 40px auto 0;
+		text-align: center;
+	}
+	.thanks .check {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 72px;
+		height: 72px;
+		margin-bottom: 18px;
+		border-radius: 50%;
+		background: #00bfff;
+		color: #0b0b3b;
+	}
+	.thanks .lead {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.thanks .btn-row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 12px;
+		margin-top: 28px;
+	}
+	.thanks .btn-row .navButton:not(.active) {
+		color: #1a1a6e;
+		border-color: #c9cbe8;
+	}
+</style>
+</head>
+
+<body>
+<header>
+	<a href="Index.html">Portfolio</a>
+</header>
+<nav aria-label="Main">
+	<!--Home-->
+	<a class="navButton" href="Index.html">Home</a>
+	<!--About-->
+	<a class="navButton" href="About.html">About</a>
+	<!--Work-->
+	<div class="btnholder">
+		<a class="navButton" href="Work.html">Work</a>
+		<div class="dropdown">
+			<a href="Technical_Designer.html">Technical Designer</a>
+			<a href="3D_Printer.html">3D Printer</a>
+			<a href="Drone_Filmer.html">Drone Filmer</a>
+			<a href="Web_Designer.html">Web Designer</a>
+		</div>
+	</div>
+	<!--Contact-->
+	<a class="navButton active" href="Contact.html">Contact</a>
+</nav>
+
+<main>
+	<section class="panel thanks" role="status">
+		<span class="check" aria-hidden="true">
+			<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+		</span>
+		<p class="eyebrow">Message received</p>
+		<h1 class="page-title">Thank you<span id="thanksName"></span>!</h1>
+		<p class="lead">Thanks for reaching out<span id="thanksTopic"></span>. I'll read your message and get back to you soon.</p>
+		<div class="btn-row">
+			<a class="navButton active" href="Index.html">Back to home</a>
+			<a class="navButton" href="Work.html">See my work</a>
+		</div>
+	</section>
+</main>
+
+<footer>
+	<div class="footer-inner">
+		<span>&copy; 2026 David Kesselman</span>
+		<span>Technical design · 3D printing · Drone filming · Web design</span>
+	</div>
+</footer>
+
+<script>
+	// Show the visitor's name and topic passed from the contact form (Contact.html)
+	var params = new URLSearchParams(window.location.search);
+	var name = (params.get("name") || "").trim();
+	var topic = (params.get("topic") || "").trim();
+	if (name) {
+		document.getElementById("thanksName").textContent = ", " + name;
+	}
+	if (topic && topic !== "Something else") {
+		document.getElementById("thanksTopic").textContent = " about " + topic.charAt(0).toLowerCase() + topic.slice(1);
+	}
+</script>
+</body>
+</html>
